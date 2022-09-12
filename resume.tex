@@ -1,0 +1,167 @@
+% !TeX root = resume.tex
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+\documentclass[]{awesome-cv}
+\usepackage{textcomp}
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{resume/}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-red}
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+%\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Profile
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+	\headerfirstnamestyle{Kavinpon} \headerlastnamestyle{Navapong} \\
+	\vspace{2mm}
+	{\faEnvelope\ kavinpon@hotmail.com} | {\faMobile\ +66863266507} | {\faMapMarker\ Bangkok, Thailland} | {\faLinkedin\ linkedin.com/in/kavinpon}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Experience
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Work Experience}
+\begin{cventries}
+	\cventry
+	{Kasikorn Business-Technology Group}
+	{Backend Software Engineer}
+	{Bangkok, Thailand}
+	{November 2020 – Present}
+	{\begin{cvitems}
+			\item {Built an online payment facilitator project which handles 300,000 transactions a day.}
+			\item {Designed and integrated new payment methods including authentication process, receiving payment notifications, and receiving settlement files for the reconciliation process.}
+			\item {Designed and developed the money movement flow within the system.}
+			\item {Supported partner integration process between partners and the project.}
+			\item {Built an internal unit test framework to reduce the cost of testing and refactoring code, which speeds up the development process.}
+			\item {Reduced reconciliation time by 90\% through code refactoring.}
+			\item {Created an EazyBI dashboard for Jira to simplify the sprint planning process, which reduces the time spent in the meeting by 20\%.}
+		\end{cvitems}}
+	\cventry
+	{Accenture}
+	{Technical Analyst (Intern)}
+	{Bangkok, Thailand}
+	{June 2019 – December 2019}
+	{\begin{cvitems}
+			\item {Collaborated with product owners and developers to design the working process of features that will be deployed in the mobile banking application with 8 million users.}
+			\item {Designed an online database that can be managed through an internal website to eliminate operational loss from using an Excel database.}
+			\item {Designed and created a Kibana dashboard that uses statistical methods to detect defects in the digital lending feature, which is used by 30,000 users per day.}
+		\end{cvitems}}
+\end{cventries}
+\cvsection{Technical Skills}
+\begin{cventries}
+	\cventry
+	{}
+	{\def\arraystretch{1.15}{\begin{tabular}{ l l }
+				Tech Stack: & {\skill{ Golang, MongoDB, SQL, React.js, TypeScript}} \\
+				Platform:   & {\skill{ AWS, OpenShift, Docker, Control-M}}          \\
+			\end{tabular}}}
+	{}
+	{}
+	{}
+\end{cventries}
+
+\vspace{-7mm}
+\cvsection{Projects}
+\begin{cventries}
+	\cventry
+	{}
+	{Axie Breeding Calculator}
+	{AWS, Golang, GraphQL, React.js}
+	{https://axie-tools.netlify.app/}
+	{Built a full-stack web app to calculate the expected profit for breeding Axies, an in-game asset in a game called Axie Infinity, by selecting the top 4 highest possibilities from over 90,000 possible combinations.}
+
+	\vspace{-5mm}
+\end{cventries}
+
+\cvsection{Certifications}
+\begin{cventries}
+	\cventry
+	{}
+	{Kafka Fundamentals Accreditation}
+	{Confluent}
+	{}
+	{}
+	\cventry
+	{}
+	{Containers, K8s and Istio on IBM Cloud}
+	{IBM}
+	{}
+	{}
+\end{cventries}
+% \begin{cvhonors}
+% 	\cvhonor
+% 	{}
+% 	{Kafka Fundamentals Accreditation}
+% 	{Confluent}
+% 	{}
+% 	\cvhonor
+% 	{}
+% 	{Containers, K8s and Istio on IBM Cloud}
+% 	{IBM}
+% 	{}
+% \end{cvhonors}
+
+\cvsection{Awards}
+\begin{cvhonors}
+	\cvhonor
+	{RideBeam Code Stars 2022}
+	{Ranked 10 th out of 90}
+	{Ridebeam}
+	{September 2022}
+	\cvhonor
+	{Facebook Hacker Cup 2021}
+	{Ranked 1,701 th out of 6,789 in round 2}
+	{Facebook}
+	{September 2021}
+\end{cvhonors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Education
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Education}
+\begin{cventries}
+	\cventry
+	{Bachelor of Engineering in Industrial Engineering}
+	{Chulalongkorn University}
+	{Bangkok, Thailand}
+	{2016 – 2020}
+	{GPA: 3.51}
+\end{cventries}
+
+\vspace{-2mm}
+\
+\end{document}
