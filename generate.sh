@@ -1,0 +1,1 @@
+xelatex "Kavinpon Navapong_Resume.tex"
