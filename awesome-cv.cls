@@ -156,16 +156,16 @@
 \newcounter{colorCounter}
 \def\@sectioncolor#1#2#3{%
   {%
-    \color{%
-      \ifcase\value{colorCounter}%
-        awesome\or%
-        awesome\or%
-        awesome\or%
-        awesome\or%
-        awesome\else%
-        awesome\fi%
-    } #1#2#3%
-  }%
+      \color{%
+        \ifcase\value{colorCounter}%
+          awesome\or%
+          awesome\or%
+          awesome\or%
+          awesome\or%
+          awesome\else%
+          awesome\fi%
+      } #1#2#3%
+    }%
   \stepcounter{colorCounter}%
 }
 
@@ -228,7 +228,7 @@
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text} #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 
 % For elements of entry
@@ -237,7 +237,7 @@
 \newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{12pt}{1em}\bodyfontlight\upshape\color{text} #1}}
-\newcommand*{\skill}[1]{{\fontsize{12pt}{1em}\bodyfontlight\upshape\color{text} \textnormal{#1}}}
+\newcommand*{\skill}[1]{{\fontsize{12pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -248,13 +248,13 @@
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{graytext} #1}}
-\newcommand*{\honorpositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{darktext} #1}}
+\newcommand*{\honorpositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\upshape\color{darktext} #1}}
 \newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{12pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
 \newcommand*{\paragraphstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -412,95 +412,95 @@
       \newbool{isstart}
       \setbool{isstart}{true}
       \ifthenelse{\isundefined{\@mobile}}
-        {}
+      {}
+      {
+        \faMobile\ \@mobile
+        \setbool{isstart}{false}
+      }
+      \ifthenelse{\isundefined{\@email}}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \faMobile\ \@mobile
           \setbool{isstart}{false}
         }
-      \ifthenelse{\isundefined{\@email}}
-        {}
-        {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          \href{mailto:\@email}{\faEnvelope\ \@email}
-        }
+        {\@headersocialsep}
+        \href{mailto:\@email}{\faEnvelope\ \@email}
+      }
       \ifthenelse{\isundefined{\@link}}
-        {}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          \href{http://\@link}{\faLink\ \@link}
+          \setbool{isstart}{false}
         }
+        {\@headersocialsep}
+        \href{http://\@link}{\faLink\ \@link}
+      }
       \ifthenelse{\isundefined{\@github}}
-        {}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          \href{https://github.com/\@github}{\faGithubSquare\ \@github}
+          \setbool{isstart}{false}
         }
+        {\@headersocialsep}
+        \href{https://github.com/\@github}{\faGithubSquare\ \@github}
+      }
       \ifthenelse{\isundefined{\@stackoverflowid}}
-        {}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\ \@stackoverflowname}
+          \setbool{isstart}{false}
         }
+        {\@headersocialsep}
+        \href{https://stackoverflow.com/users/\@stackoverflowid}{\faStackOverflow\ \@stackoverflowname}
+      }
       \ifthenelse{\isundefined{\@linkedin}}
-        {}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\ \@linkedin}
+          \setbool{isstart}{false}
         }
+        {\@headersocialsep}
+        \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\ \@linkedin}
+      }
       \ifthenelse{\isundefined{\@location}}
-        {}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          {}{\faMapMarker\ \@location}
+          \setbool{isstart}{false}
         }
+        {\@headersocialsep}
+        {}{\faMapMarker\ \@location}
+      }
       \ifthenelse{\isundefined{\@twitter}}
-        {}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          \href{https://twitter.com/\@twitter}{\faTwitter\ \@twitter}
+          \setbool{isstart}{false}
         }
+        {\@headersocialsep}
+        \href{https://twitter.com/\@twitter}{\faTwitter\ \@twitter}
+      }
       \ifthenelse{\isundefined{\@skype}}
-        {}
+      {}
+      {
+        \ifbool{isstart}
         {
-          \ifbool{isstart}
-            {
-              \setbool{isstart}{false}
-            }
-            {\@headersocialsep}
-          \faSkype\ \@skype
+          \setbool{isstart}{false}
         }
+        {\@headersocialsep}
+        \faSkype\ \@skype
+      }
     } \\
     \ifthenelse{\isundefined{\@quote}}
-      {}
-      {\vspace{6.0mm}\headerquotestyle{\@quote\\}\vspace{5.0mm}}
+    {}
+    {\vspace{6.0mm}\headerquotestyle{\@quote\\}\vspace{5.0mm}}
   \end{center}
 }
 
@@ -539,7 +539,7 @@
 % Define an environment for cventry
 \newenvironment{cventries}{
   \begin{center}
-}{
+    }{
   \end{center}
 }
 % Define an entry of cv information
@@ -549,8 +549,8 @@
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{12.5cm} R{5cm}}
     \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+    {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{17cm}}{\descriptionstyle{#5}} \\
   \end{tabular*}
@@ -559,7 +559,7 @@
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{
   \begin{center}
-}{
+    }{
   \end{center}
 }
 % Define a subentry of cv information
@@ -570,13 +570,13 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{12.5cm} R{4.5cm}}
     \setlength\leftskip{0.2cm}
     \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
-      {\subentrydatestyle{#3}}{}
+    {\subentrydatestyle{#3}}{}
     \ifthenelse{\equal{#1}{}}
-      {}
-      {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
+    {}
+    {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
     \ifthenelse{\equal{#4}{}}
-      {}
-      {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
+    {}
+    {\multicolumn{2}{L{17.0cm}}{\subdescriptionstyle{#4}} \\}
   \end{tabular*}
 }
 
@@ -586,14 +586,14 @@
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{13.0cm} R{2.5cm}}
-}{
+      }{
     \end{tabular*}
   \end{center}
 }
 % Define a line of cv certificate information
 % Usage: \cvcertificate{<title>}{<location>}
 \newcommand*{\cvcertificate}[2]{
-   \entrytitlestyle{#1} & \entrylocationstyle{#2}
+  \entrytitlestyle{#1} & \entrylocationstyle{#2}
   \\
 }
 
@@ -603,43 +603,43 @@
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{13.0cm} R{2.5cm}}
-}{
+      }{
     \end{tabular*}
   \end{center}
 }
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<title>}{<position>}{<date>}
 \newcommand*{\cvhonor}[3]{
-   \honortitlestyle{#1}, \honorpositionstyle{#2} & \honordatestyle{#3}
+  \honortitlestyle{#1} \honorpositionstyle{#2} & \honordatestyle{#3}
   \\
 }
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{
   \begin{center}
-    \setlength\tabcolsep{1ex}
+    \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{15.2cm}}
-}{
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{15.0cm}}
+      }{
     \end{tabular*}
   \end{center}
 }
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{
-	\skilltypestyle{#1} & \skillsetstyle{#2}
+  \skilltypestyle{#1} & \skillsetstyle{#2}
   \\
 }
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{
-  \vspace{-2mm}
+  \vspace{-3mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-    \setlength{\parskip}{0pt}
-    \renewcommand{\labelitemi}{\bullet}
-}{
-  \end{itemize}
+    \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+      \setlength{\parskip}{0pt}
+      \renewcommand{\labelitemi}{\bullet}
+      }{
+    \end{itemize}
   \end{justify}
 }
 
@@ -676,8 +676,8 @@
     \recipientaddressstyle{\@recipientaddress} \\\\
   \end{singlespace}
   \ifthenelse{\isundefined{\@lettertitle}}
-    {}
-    {\lettertitlestyle{\@lettertitle} \\}
+  {}
+  {\lettertitlestyle{\@lettertitle} \\}
   \lettertextstyle{\@letteropening}
 }
 
@@ -688,9 +688,9 @@
   \lettertextstyle{\@letterclosing} \\\\
   \letternamestyle{\@firstname \@lastname}
   \ifthenelse{\isundefined{\@letterenclosure}}
-    {\\}
-    {
-      \\\\\\
-      \letterenclosurestyle{\@letterenclname:  \@letterenclosure} \\
-    }
+  {\\}
+  {
+    \\\\\\
+    \letterenclosurestyle{\@letterenclname:  \@letterenclosure} \\
+  }
 }
