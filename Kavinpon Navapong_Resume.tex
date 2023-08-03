@@ -21,11 +21,19 @@
 %%% Themes: Awesome-CV
 \documentclass[]{awesome-cv}
 \usepackage{textcomp}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!80!black,
+    urlcolor=blue!80!black    
+}
+
 %%% Override a directory location for fonts(default: 'fonts/')
 \fontdir[fonts/]
 
 %%% Configure a directory location for sections
 \newcommand*{\sectiondir}{resume/}
+
 
 %%% Override color
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
@@ -61,21 +69,20 @@
 	{Beam Mobility}
 	{Fullstack Software Engineer}
 	{Singapore (Remote)}
-	{December 2022 – Present}
+	{December 2022 - Present}
 	{\begin{cvitems}
-			\item {Collaborated with cross-functional teams to gather requirements, design system architecture,\\ and develop scalable solutions for new features within a micromobility application.}
-			\item {Revamped the company's main application, leveraging Flutter instead of React.js,\\ resulting in reduced technical debt and enhanced performance.}
-			\item {Implemented single sign-on (SSO) feature, leading to a 66\% reduction in operational costs.}
-			\item {Developed and launched a loyalty program, resulting in a 5\% increase in number of trips.}
+			\item {Collaborated with cross-functional teams to gather requirements, design system architecture,\\ and develop scalable solutions for new features within a micro-mobility application.}
+			\item {Migrated the company's main application from React Native to Flutter,\\ reducing technical debt and enhancing performance.}
+			\item {Implemented a single sign-on (SSO) feature, leading to a 66\% reduction in operational costs.}
+			\item {Developed and launched a loyalty program, resulting in a 5\% increase in trips.}
 		\end{cvitems}}
 	\cventry
 	{Kasikorn Business-Technology Group}
 	{Backend Software Engineer}
 	{Bangkok, Thailand}
-	{November 2020 – November 2022}
+	{November 2020 - November 2022}
 	{\begin{cvitems}
 			\item {Built an online payment facilitator project which handles 300,000 transactions a day.}
-			\item {Designed and integrated new payment methods including authentication process,\\ receiving payment notifications, and receiving settlement files for the reconciliation process.}
 			\item {Built a monitoring system that identifies and alerts the team regarding non-indexed queries,\\ resulting in a 50\% reduction in production incidents.}
 			\item {Achieved a 90\% reduction in reconciliation time through code refactoring.}
 			\item {Streamlined sprint planning processes by creating an EazyBI dashboard for Jira,\\ leading to a 20\% reduction in meeting time.}
@@ -84,7 +91,7 @@
 	{Accenture}
 	{Technical Analyst (Intern)}
 	{Bangkok, Thailand}
-	{June 2019 – December 2019}
+	{June 2019 - December 2019}
 	{\begin{cvitems}
 			\item {Collaborated with product owners and developers to design the working process\\ of features that will be deployed in the mobile banking application with 8 million users.}
 			\item {Designed and created a Kibana dashboard that uses statistical methods to detect\\ defects in the digital lending feature, which is used by 30,000 users per day.}
@@ -94,7 +101,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Skills
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{-4mm}
+\vspace{-5mm}
 \cvsection{Technical Skills}
 \begin{cventries}
 	\cventry
@@ -111,8 +118,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Projects
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{-8mm}
+\vspace{-9mm}
 \cvsection{Projects}
+\begin{cventries}
+	\cventry
+	{GCP, Flutter, Python}
+	{WealthWatch}
+	{\href{https://play.google.com/store/apps/details?id=com.wealthwatch.portfolioapp}{Google Play Store}}
+	{}
+	{Developed an application to track Thai mutual funds, facilitating investment monitoring and performance evaluation to aid investors in achieving their financial goals.}
+\end{cventries}
 \begin{cventries}
 	\cventry
 	{AWS, Golang, GraphQL, React.js}
@@ -146,10 +161,9 @@
 	{Bachelor of Engineering in Industrial Engineering}
 	{Chulalongkorn University}
 	{Bangkok, Thailand}
-	{2016 – 2020}
+	{2016 - 2020}
 	{}
 \end{cventries}
 
-\vspace{-2mm}
-\
+\let\clearpage\relax
 \end{document}
