@@ -57,8 +57,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
 	\headerfirstnamestyle{Kavinpon} \headerlastnamestyle{Navapong} \\
-	\vspace{2mm}
-	{\faEnvelope\ kavinpon@hotmail.com} | {\faMobile\ +66863266507} | {\faMapMarker\ Bangkok, Thailland} | {\faLinkedin\ linkedin.com/in/kavinpon}
+	\vspace{1mm}
+	\headercontactstyle{\faEnvelope\ kavinpon@hotmail.com} | \headercontactstyle{\faMobile\ +66863266507} | \headercontactstyle{\faMapMarker\ Bangkok, Thailand} | \headercontactstyle{\faLinkedin\ linkedin.com/in/kavinpon}
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Experience
@@ -75,6 +75,7 @@
 			\item {Migrated the company's main application from React Native to Flutter,\\ reducing technical debt and enhancing performance.}
 			\item {Implemented a single sign-on (SSO) feature, leading to a 66\% reduction in operational costs.}
 			\item {Developed and launched a loyalty program, resulting in a 5\% increase in trips.}
+			\item {Achieved an 80\% reduction in Flutter Build Runner time through removal of redundant processes.}
 		\end{cvitems}}
 	\cventry
 	{Kasikorn Business-Technology Group}
@@ -103,17 +104,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{-5mm}
 \cvsection{Technical Skills}
-\begin{cventries}
-	\cventry
-	{}
-	{\def\arraystretch{1.15}{\begin{tabular}{ p{2.5cm} l }
-				Tech Stack: & {\skill{ Kotlin, Flutter, Golang, TypeScript, node.js, React.js, PostgreSQL, MongoDB}} \\
-				Platform:   & {\skill{ AWS, GCP, OpenShift, Kubernetes, Docker, Control-M}}                          \\
-			\end{tabular}}}
-	{}
-	{}
-	{}
-\end{cventries}
+\begin{cvskills}
+	\cvskill
+	{{\begin{tabular}{ L{2.5cm} l }
+		\skilltypestyle{ Tech Stack: } & {\skillsetstyle{ Kotlin, Flutter, Golang, TypeScript, node.js, React.js, PostgreSQL, MongoDB}} \\
+		\skilltypestyle{ Platform: }   & {\skillsetstyle{ AWS, GCP, OpenShift, Kubernetes, Docker, Control-M}}                          \\
+	\end{tabular}}}
+\end{cvskills}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Projects
@@ -158,7 +155,7 @@
 \cvsection{Education}
 \begin{cventries}
 	\cventry
-	{Bachelor of Engineering in Industrial Engineering}
+	{Bachelor of Engineering in Industrial Engineering (GPA: 3.51/4.00)}
 	{Chulalongkorn University}
 	{Bangkok, Thailand}
 	{2016 - 2020}
