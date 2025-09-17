@@ -11,3 +11,4 @@ You will need to have `xelatex` installed on your machine.
 [Install XeLatex](http://www.texts.io/support/)
 
 Alternatively, you can use a site like [ShareLaTeX](https://sharelatex.com) to build and edit your LaTeX instead.
+
